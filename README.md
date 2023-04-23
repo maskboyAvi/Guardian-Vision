@@ -42,11 +42,17 @@ Light/dark mode toggle
 
 ## Installation
 
-Install my-project with npm
+Install required packages for JSON server with npm
+*Path should be the directory where Project is present 
 
 ```bash
-  npm install my-project
-  cd my-project
+  npm init
+  npm install -g json-server
+```
+To Run the json-server on port 8000
+
+```bash
+  json-server --watch ./database/db.json --port 8000
 ```
     
 Install the Basic libaray    
