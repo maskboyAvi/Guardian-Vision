@@ -28,8 +28,9 @@ body{
     background-size: cover;
     background-image: url("../images/sections-bg-images/signbg.jpg");
     filter: blur(8px);
-    height: 800px;
-    width: 1510px;
+    height: 900px;
+    width: 1600px;
+    overflow: hidden;
 }
 .container{
     padding: 40px;
@@ -128,6 +129,7 @@ body{
     font-weight: 300;
 }
 .container .form p a{
+    text-decoration: none;
     font-weight: 500;
     color: #fff;
 }
