@@ -1,4 +1,28 @@
 {
   "user": [
+    {
+      "id": "Maskboi",
+      "pwd": "asdfasdf",
+      "name": "Aviral",
+      "email": "aviralofficial1729@gmail.com"
+    },
+    {
+      "id": "avi",
+      "pwd": "123123",
+      "name": "Aviral Katiyar",
+      "email": "aks@gmail.com"
+    },
+    {
+      "id": "test",
+      "pwd": "123456789",
+      "name": "test",
+      "email": "TEST@GMAIL.COM"
+    },
+    {
+      "id": "disha",
+      "pwd": "qwertyuiop",
+      "name": "sid",
+      "email": "disha@disha.com"
+    }
   ]
 }

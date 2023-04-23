@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+    content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Video</title>
+  <!-- css -->
+  <link rel="stylesheet" href="../static/css/indexstyles.css">
+  <!-- boxicons -->
+  <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+  <!-- remixicon -->
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+  <!-- fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="../static/css/uicss.css">
+</head>
+
+<body>
+  <header>
+    <div class="logo">
+      <a href="#">
+        <img src="../static/images/logo/logo.png" alt="Comapany Logo">
+      </a>
+    </div>
+    <nav class="nav" id="nav_menu">
+      <ion-icon name="close-outline" class="header_close" id="close_menu"></ion-icon>
+      <ul class="nav_list">
+        <li class="nav_item"><a href="#home" class="nav_link nav-active">Home</a></li>
+        <li class="nav_item"><a href="#about" class="nav_link">About Us</a></li>
+        <li class="nav_item"><a href="#gallery" class="nav_link">Gallery</a></li>
+        <li class="nav_item"><a href="#contact" class="nav_link">Contact Us</a></li>
+        <li class="nav_item"><a href="#login" class="nav_link">Login</a></li>
+      </ul>
+    </nav>
+    <ion-icon name="menu-outline" class="header_toggle" id="toggle_menu"></ion-icon>
+  </header>
+
+  <section class="hero">
+    <div class="hero-text cen">
+      <h1>Guardian Vision</h1>
+      <p>
+        Test with your Webcam
+      </p>
+    </div>
+  </section>
+  <section class="webcam">
+    <div class="flx">
+      <div class="frst">
+        <button class="btn" id="webbtn" onclick="webon()">
+          Start Webcam
+        </button>
+        <button class="btn hide" id="webbtnStop" onclick="webon()">
+          Stop Webcamd
+        </button>
+
+      </div>
+      <div id="webarea">
+        <div class="pyramid-loader">
+          <div class="wrapper">
+            <span class="side side1"></span>
+            <span class="side side2"></span>
+            <span class="side side3"></span>
+            <span class="side side4"></span>
+            <span class="shadow"></span>
+          </div>
+        </div>
+        <div class="temp hide">This is temp</div>
+        <div class="loader hide"></div>
+      </div>
+    </div>
+  </section>
+  <!-- <img src="{{ url_for('webapp') }}"   alt="Upload video"> -->
+
+</body>
+<script>
+  let ele = document.getElementsByClassName('pyramid-loader')[0];
+  let ele2 = document.getElementsByClassName('loader')[0];
+  let temp = document.getElementsByClassName('temp')[0];
+  function webon() {
+    // ele.innerHTML = `<img src="{{ url_for('webapp') }}"   alt="Upload video">`
+    ele.classList.toggle('hide');
+    ele2.classList.toggle('hide');
+    temp.innerHTML=`<img class="imgweb" src="{{ url_for('webapp') }}"   alt="Upload video">`;
+    setTimeout(() => {
+      temp.classList.toggle('hide');
+      ele.classList.add('hide');
+      ele2.classList.add('hide');
+    }, 2000);
+  }
+</script>
+
+</html>

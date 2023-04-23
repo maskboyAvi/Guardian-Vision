@@ -4,12 +4,21 @@
     "sweetalert2": "^11.7.3"
   },
   "name": "sign-in-up-page",
-  "description": "",
+  "description": "Violence detection ML model to detect suspicious activities in real-time through CCTV or any camera, and send immediate alert to the respective authorities.",
   "version": "1.0.0",
   "main": "signup.js",
   "scripts": {
     "start": "json-server --watch ./database/db.json --port 8000"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maskboyAvi/Guardian-Vision.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/maskboyAvi/Guardian-Vision/issues"
+  },
+  "homepage": "https://github.com/maskboyAvi/Guardian-Vision#readme"
 }
