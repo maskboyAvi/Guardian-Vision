@@ -6,6 +6,6 @@ function setUsername() {
 
 function logout() {
     localStorage.clear();
-    window.location.href = "./signup.html";
+    window.location.href = "/home";
     localStorage.setItem("flagLog", true);
 }

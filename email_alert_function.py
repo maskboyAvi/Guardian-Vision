@@ -33,12 +33,3 @@ def em(receiver):
     server.login(sender, password)
     server.sendmail(sender,[receiver],msg_full)
     server.quit()
-
-# print("Enter number of email_ids you want to register:")
-n=int(input("Enter number of email_ids you want to register:"))    
-lst=[]
-for i in range(n):
-  lst.append(input("Enter the email"))
-
-for gmail in lst:
- em(gmail)

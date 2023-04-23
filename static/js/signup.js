@@ -102,7 +102,7 @@ function validateData(){
                     showConfirmButton: false,
                     timer: 1500
                   }).then((result) => {
-                    window.location.href="../templates/Home.html";
+                    window.location.href="/profile";
                     });
                }
                else{
