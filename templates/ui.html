@@ -8,7 +8,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Video</title>
   <!-- css -->
-  <link rel="stylesheet" href="../static/css/indexstyles.css">
+  <!-- <link rel="stylesheet" href="../static/css/indexstyles.css"> -->
   <!-- boxicons -->
   <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
   <!-- remixicon -->
@@ -17,80 +17,184 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="../static/css/uicss.css">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert-dev.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.css">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <!-- <script src="sweetalert2.min.js"></script> -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.6.8/sweetalert2.css">
+  <script src="
+https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.all.min.js
+"></script>
+  <link href="
+https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.min.css
+" rel="stylesheet">
 </head>
 
 <body>
-  <header>
-    <div class="logo">
-      <a href="#">
-        <img src="../static/images/logo/logo.png" alt="Comapany Logo">
-      </a>
-    </div>
-    <nav class="nav" id="nav_menu">
-      <ion-icon name="close-outline" class="header_close" id="close_menu"></ion-icon>
-      <ul class="nav_list">
-        <li class="nav_item"><a href="#home" class="nav_link nav-active">Home</a></li>
-        <li class="nav_item"><a href="#about" class="nav_link">About Us</a></li>
-        <li class="nav_item"><a href="#gallery" class="nav_link">Gallery</a></li>
-        <li class="nav_item"><a href="#contact" class="nav_link">Contact Us</a></li>
-        <li class="nav_item"><a href="#login" class="nav_link">Login</a></li>
-      </ul>
-    </nav>
-    <ion-icon name="menu-outline" class="header_toggle" id="toggle_menu"></ion-icon>
-  </header>
-
-  <section class="hero">
-    <div class="hero-text cen">
-      <h1>Guardian Vision</h1>
-      <p>
-        Test with your Webcam
-      </p>
-    </div>
-  </section>
-  <section class="webcam">
-    <div class="flx">
-      <div class="frst">
-        <button class="btn" id="webbtn" onclick="webon()">
-          Start Webcam
-        </button>
-        <button class="btn hide" id="webbtnStop" onclick="webon()">
-          Stop Webcamd
-        </button>
-
+  <video autoplay muted loop id="myVideo">
+    <source src="..\static\images/new.mp4" type="video/mp4">
+  </video>
+  <div class="content">
+    <section class="head">
+      <div class="head-text cen">
+        <h1 class="glow">Guardian Vision</h1>
+        <p>
+          Test with your Webcam
+        </p>
       </div>
-      <div id="webarea">
-        <div class="pyramid-loader">
-          <div class="wrapper">
-            <span class="side side1"></span>
-            <span class="side side2"></span>
-            <span class="side side3"></span>
-            <span class="side side4"></span>
-            <span class="shadow"></span>
+    </section>
+    <section class="webcam">
+      <div class="flx">
+        <div class="frst">
+          <p>Enter email you want to send</p>
+          <div class="textInputWrapper">
+            <input placeholder="Email Here" type="text" class="textInput" id="empmail" onload="validate()"
+              onkeypress="validate()">
+          </div>
+
+          <button class="button dis" id="webbtn" onclick="webon()" disabled> <b>Start Webcam </b>
+          </button>
+          <button class="button hide" id="webbtn2" onclick="window.location.reload()"> <b>Stop Webcam</b>
+          </button>
+
+        </div>
+
+        <div id="webarea">
+          <div class="cube" id="load1">
+            <div class="topD"></div>
+            <div>
+              <span style="--i:0"></span>
+              <span style="--i:1"></span>
+              <span style="--i:2"></span>
+              <span style="--i:3"></span>
+            </div>
+
+            <div class="cube2">
+              <div>
+                <span style="--i:0"></span>
+                <span style="--i:1"></span>
+                <span style="--i:2"></span>
+                <span style="--i:3"></span>
+              </div>
+
+              <div class="cube3">
+                <div class="top3"></div>
+                <div>
+                  <span style="--i:0"></span>
+                  <span style="--i:1"></span>
+                  <span style="--i:2"></span>
+                  <span style="--i:3"></span>
+                </div>
+
+              </div>
+
+            </div>
+          </div>
+
+          <div id="alignved">
+            <div class="temp hide" id="webtemp">
+              Webcam Here
+            </div>
+          </div>
+
+          <div class="cent">
+            <div class="loading-bar hide" id="load2">
+              Loading
+            </div>
           </div>
         </div>
-        <div class="temp hide">This is temp</div>
-        <div class="loader hide"></div>
       </div>
-    </div>
-  </section>
-  <!-- <img src="{{ url_for('webapp') }}"   alt="Upload video"> -->
+    </section>
+  </div>
 
 </body>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script>
-  let ele = document.getElementsByClassName('pyramid-loader')[0];
-  let ele2 = document.getElementsByClassName('loader')[0];
-  let temp = document.getElementsByClassName('temp')[0];
+  let load1 = document.getElementById('load1');
+  let temp = document.getElementById('webtemp');
+  let load2 = document.getElementById('load2');
+  let startbut = document.getElementById('webbtn');
+  let stopbut = document.getElementById('webbtn2');
+
+  let con = 0
+  let ele = document.getElementById('empmail')
+
+  // let value1 = ele.value;
+  // console.log(value1)
   function webon() {
-    // ele.innerHTML = `<img src="{{ url_for('webapp') }}"   alt="Upload video">`
-    ele.classList.toggle('hide');
-    ele2.classList.toggle('hide');
-    temp.innerHTML=`<img class="imgweb" src="{{ url_for('webapp') }}"   alt="Upload video">`;
+    ele.innerHTML = `<img src="{{ url_for('webapp') }}"   alt="Upload video">`
+    let emailll = document.getElementById('empmail').value
+    load1.classList.toggle('hide');
+    load2.classList.toggle('hide');
+    
+    let email = document.getElementById('empmail').value;
+    let url = `/webapp?email=${email}`;
+    console.log(url)
+    temp.innerHTML = `<img class="imgweb" src="${url}" alt="Upload video">`;
+
+    startbut.classList.add('hide');
+    stopbut.classList.remove('hide');
+    con = con+1;
+    console.log(con);
+    if (con > 1) {
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: 'Email Required...',
+      })
+    }
     setTimeout(() => {
       temp.classList.toggle('hide');
-      ele.classList.add('hide');
-      ele2.classList.add('hide');
-    }, 2000);
+      load1.classList.add('hide');
+      load2.classList.add('hide');
+    }, 15000);
   }
+
+
+  function validate() {
+    if (ele != "" || ele != null) {
+      startbut.removeAttribute("disabled");
+      startbut.classList.remove('dis');
+    }
+    else{
+      sendData();
+    }
+  }
+
+  // function sendData(){
+  //   jsonObject={
+  //       "email1": "",
+  //   };
+
+  //   // jsonObject.id=id;
+  //   // jsonObject.pwd=pwd;
+  //   // jsonObject.name=name;
+  //   jsonObject.email1=ele.value();
+  //   console.log("hello hello")
+  //   var str=JSON.stringify(jsonObject);
+  //   $.ajax({
+  //       url:"/flaskapp.py",
+  //       type:"POST",
+  //       data:str,
+  //       contentType:"application/json",
+  //       success:function(data){
+  //           console.log(data);
+  //           localStorage.setItem("resp", str)
+  //           Swal.fire(
+  //               'Good job!',
+  //               'Successfully registered',
+  //               'success'
+  //           ).then((result) => {
+  //               container.classList.remove('signinForm');
+  //             });
+  //       }.bind(this),
+  //       error:function(xhr, status, err){
+  //           console.error(this.props.url, status, err.toString());
+  //       }
+  //   }).done(function() {
+  //   });
+  // }
 </script>
 
 </html>

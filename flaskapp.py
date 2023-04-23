@@ -33,8 +33,8 @@ def generate_frames(path_x = ''):
         yield (b'--frame\r\n'
                     b'Content-Type: image/jpeg\r\n\r\n' + frame +b'\r\n')
 
-def generate_frames_web(path_x):
-    yolo_output = video_detection(path_x)
+def generate_frames_web(receiver,path_x):
+    yolo_output = video_detection(path_x,receiver)
     for detection_ in yolo_output:
         ref,buffer=cv2.imencode('.jpg',detection_)
 
@@ -48,7 +48,6 @@ def home():
     session.clear()
     return render_template('index.html')
 @app.route("/webcam", methods=['GET','POST'])
-
 def webcam():
     session.clear()
     return render_template('ui.html')
@@ -70,7 +69,9 @@ def video():
 
 @app.route('/webapp')
 def webapp():
-    return Response(generate_frames_web(path_x=0), mimetype='multipart/x-mixed-replace; boundary=frame')
+    email = request.args.get('email')
+    print(email)
+    return Response(generate_frames_web(email,path_x=0), mimetype='multipart/x-mixed-replace; boundary=frame')
 
 @app.route("/signup", methods=['GET','POST'])
 def signup():
@@ -78,9 +79,15 @@ def signup():
     return render_template('signup.html')
 
 @app.route("/profile", methods=['GET','POST'])
+@app.route("/profile", methods=['GET','POST'])
 def profile():
     session.clear()
     return render_template('home.html')
+@app.route("/email",methods=['GET','POST'])
+def email():
+    email = request.form.get("email")
+    # print(email)
+    return email
 
 if __name__ == "__main__":
     app.run(debug=True)
