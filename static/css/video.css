@@ -24,8 +24,8 @@
   position: relative;
   height: 24rem;
   width: 30%;
-  background-color: rgba(19, 61, 111, 0.7);
-  border: 2px white solid;
+/*   background-color: rgba(19, 61, 111, 0.7); */
+/*   border: 2px white solid; */
   color: white;
   margin: 3rem 2.5rem;
   padding: 2rem 2rem;
@@ -34,10 +34,10 @@
 .flex-2 {
   height: 24rem;
   width: 60%;
-  background-color: rgb(19, 61, 111);
+/*   background-color: rgb(19, 61, 111); */
   margin: 3rem 2.5rem;
   color: white;
-  background-color: rgba(19, 61, 111, 0.7);
+  background-color: rgba(19, 61, 111, 0.4);
   border: 2px white solid;
 }
 
