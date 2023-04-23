@@ -43,7 +43,7 @@ def em(receiver,img):
     server.sendmail(sender,[receiver],msg_full)
 
 
-def video_detection(path_x):
+def video_detection(path_x,receiver):
     video_capture = path_x
     #Create a Webcam Object
     cap=cv2.VideoCapture(video_capture)
@@ -52,7 +52,7 @@ def video_detection(path_x):
     #out=cv2.VideoWriter('output.avi', cv2.VideoWriter_fourcc('M', 'J', 'P','G'), 10, (frame_width, frame_height))
 
     model=YOLO('ModelWeights\gun_nano_best.pt')
-    classNames = ["Knife","Grenade","Gun","Knife","Not Knife","Pistol"]
+    classNames = ["Gun"]
     while True:
         success, img = cap.read()
         results=model(img,stream=True,conf=0.5)
@@ -86,7 +86,7 @@ def video_detection(path_x):
                     # with concurrent.futures.ThreadPoolExecutor() as executor:
                     #     future = executor.submit(em,"dasyagupta@gmail.com",img)
                     #     result = future.result()
-                    em("dasyagupta@gmail.com",img)
+                    em(receiver,img)
                     end=timer()
                     print(end-start)
                 
