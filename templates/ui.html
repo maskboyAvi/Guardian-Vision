@@ -130,7 +130,7 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.min.css
     
     let email = document.getElementById('empmail').value;
     let url = `/webapp?email=${email}`;
-    console.log(url)
+    // console.log(url)
     temp.innerHTML = `<img class="imgweb" src="${url}" alt="Upload video">`;
 
     startbut.classList.add('hide');
@@ -161,40 +161,6 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.min.css
       sendData();
     }
   }
-
-  // function sendData(){
-  //   jsonObject={
-  //       "email1": "",
-  //   };
-
-  //   // jsonObject.id=id;
-  //   // jsonObject.pwd=pwd;
-  //   // jsonObject.name=name;
-  //   jsonObject.email1=ele.value();
-  //   console.log("hello hello")
-  //   var str=JSON.stringify(jsonObject);
-  //   $.ajax({
-  //       url:"/flaskapp.py",
-  //       type:"POST",
-  //       data:str,
-  //       contentType:"application/json",
-  //       success:function(data){
-  //           console.log(data);
-  //           localStorage.setItem("resp", str)
-  //           Swal.fire(
-  //               'Good job!',
-  //               'Successfully registered',
-  //               'success'
-  //           ).then((result) => {
-  //               container.classList.remove('signinForm');
-  //             });
-  //       }.bind(this),
-  //       error:function(xhr, status, err){
-  //           console.error(this.props.url, status, err.toString());
-  //       }
-  //   }).done(function() {
-  //   });
-  // }
 </script>
 
 </html>

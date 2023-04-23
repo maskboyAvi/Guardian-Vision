@@ -58,9 +58,12 @@ To use this project, you need to have a webcam connected to your computer. The p
            <li>Bootstrap</li>  
 
 **Server:** <li> JSON</li>  
-             <li> Node</li>  
+             <li> Node</li> 
+              
 
-**Mchine Learning**  <li> Python </li>  
+**Mchine Learning**  <li> Python </li>
+                     <li> Flask </li>  
+                     <li> Yolo Models </li>  
 
 
 
@@ -80,7 +83,10 @@ To Run the json-server on port 8000
     
 Install the Basic libaray    
 ```bash
-   npm install flask
+   pip install flask
+   pip install flask_wtf
+   pip install twilio
+   pip install smtplib
 ```
 
 
