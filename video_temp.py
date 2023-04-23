@@ -9,8 +9,8 @@ def video_detection_vid(path_x):
     frame_width=int(cap.get(3))
     frame_height=int(cap.get(4))
 
-    model=YOLO('ModelWeights\\best.pt')
-    classNames = ["GUN","Grenade","Gun","Knife","Not Knife","Pistol"]
+    model=YOLO('ModelWeights\gun_nano_best.pt')
+    classNames = ["GUN","Knife"]
     while True:
         success, img = cap.read()
         results=model(img,stream=True,conf=0.5)
@@ -38,20 +38,8 @@ def video_detection_vid(path_x):
                 cv2.rectangle(img, (x1,y1), c2, color, -1, cv2.LINE_AA)  # filled
                 cv2.putText(img, label, (x1,y1-2),0, 1,[255,255,255], thickness=2,lineType=cv2.LINE_AA)
 
-                # print(img)
-                # if(conf>=0.85):
-                #     start = timer()
-                #     with concurrent.futures.ThreadPoolExecutor() as executor:
-                #         future = executor.submit(em,"dasyagupta@gmail.com",img)
-                #         result = future.result()
-                    # em("dasyagupta@gmail.com",img)
-                    # end=timer()
-                    # print(end-start)
+                
                 
         yield img
-        #out.write(img)
-        #cv2.imshow("image", img)
-        #if cv2.waitKey(1) & 0xFF==ord('1'):
-            #break
-    #out.release()
+        
 cv2.destroyAllWindows()

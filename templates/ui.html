@@ -47,10 +47,15 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.min.css
     <section class="webcam">
       <div class="flx">
         <div class="frst">
-          <p>Enter email you want to send</p>
+          <p>Enter email you want to send alert</p>
           <div class="textInputWrapper">
             <input placeholder="Email Here" type="text" class="textInput" id="empmail" onload="validate()"
               onkeypress="validate()">
+          </div>
+
+          <p>Enter Number you want to send alert</p>
+          <div class="textInputWrapper">
+            <input placeholder="Number Here" type="text" class="textInput" id="empmail" >
           </div>
 
           <button class="button dis" id="webbtn" onclick="webon()" disabled> <b>Start Webcam </b>
@@ -148,7 +153,7 @@ https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.min.css
       temp.classList.toggle('hide');
       load1.classList.add('hide');
       load2.classList.add('hide');
-    }, 15000);
+    }, 7000);
   }
 
 
