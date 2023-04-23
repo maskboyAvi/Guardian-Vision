@@ -9,6 +9,7 @@
 
 <p> Violence detection ML model to detect suspicious activities in real-time through CCTV or any camera, and send immediate alert to the respective authorities. </p>
 
+ <img src="WhatsApp Image 2023-04-24 at 01.06.23.jpg" width="900px" height="500p">
 
 ## Overview 🤖
 
