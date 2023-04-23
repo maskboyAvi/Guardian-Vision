@@ -94,7 +94,9 @@ function validateData(){
            for(var i=0;i<data.length;i++){
             console.log(data[i].id,data[i].pwd);
                if(data[i].id==id && data[i].pwd==pwd){
+                let name=data[i].name;
                 localStorage.setItem("id", id);
+                localStorage.setItem("name",name);
                 Swal.fire({
                     position: 'top-end',
                     icon: 'success',

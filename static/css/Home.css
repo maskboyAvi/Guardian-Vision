@@ -2589,3 +2589,9 @@ svg{
     position: relative;
     display: inline-block;
 }
+#name1{
+    position: relative;
+    padding-right: 1.5rem;
+    font-weight: 400;
+    font-size: 24px;
+}
