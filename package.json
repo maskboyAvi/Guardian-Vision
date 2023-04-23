@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "flask": "^0.2.10",
     "json-server": "^0.17.3",
     "sweetalert2": "^11.7.3"
   },
