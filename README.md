@@ -72,7 +72,8 @@ To use this project, you need to have a webcam connected to your computer. The p
 Install required packages for JSON server with npm *Path should be the directory where Project is present
 
 ```bash
-  npm init 
+  npm i
+  npm init -y
   npm install -g json-server
 ```
 To Run the json-server on port 8000
@@ -87,6 +88,9 @@ Install the Basic libaray
    pip install flask_wtf
    pip install twilio
    pip install smtplib
+   pip install opencv-python opencv-python-headless
+   pip install cv2
+   pip install ultralytics
 ```
 
 
