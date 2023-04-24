@@ -9,6 +9,7 @@
 
 <p> Violence detection ML model to detect suspicious activities in real-time through CCTV or any camera, and send immediate alert to the respective authorities. </p>
 
+ <img src="WhatsApp Image 2023-04-24 at 01.06.23.jpg" width="900px" height="500p">
 
 ## Overview 🤖
 
@@ -57,9 +58,12 @@ To use this project, you need to have a webcam connected to your computer. The p
            <li>Bootstrap</li>  
 
 **Server:** <li> JSON</li>  
-             <li> Node</li>  
+             <li> Node</li> 
+              
 
-**Mchine Learning**  <li> Python </li>  
+**Mchine Learning**  <li> Python </li>
+                     <li> Flask </li>  
+                     <li> Yolo Models </li>  
 
 
 
@@ -79,7 +83,10 @@ To Run the json-server on port 8000
     
 Install the Basic libaray    
 ```bash
-   npm install flask
+   pip install flask
+   pip install flask_wtf
+   pip install twilio
+   pip install smtplib
 ```
 
 
@@ -111,6 +118,8 @@ For support, email vigilantsquads@gmail.com
 - [@GamezMartian](https://github.com/ydvmudit07)
 - [@ayush_lion](https://github.com/Ayushlion8)
 
+ 
+ <img src="WhatsApp Image 2023-04-24 at 01.07.02.jpg" width="900px" height="500p">
 
 ## Feedback
 
