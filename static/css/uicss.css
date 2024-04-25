@@ -46,7 +46,11 @@
   text-align: center;
   animation: glow 1s ease-in-out infinite alternate;
 }
+.logo-link-2{
+  text-decoration: none;
+  color: #09aff4;
 
+}
 @-webkit-keyframes glow {
   from {
     text-shadow: 0 0 10px #1E1E1E, 0 0 10px #1E1E1E, 0 0 30px #09aff4, 0 0 40px #09aff4, 0 0 70px #1E1E1E;
