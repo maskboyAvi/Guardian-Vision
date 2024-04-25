@@ -3,7 +3,7 @@ import cv2
 import math
 
 def video_detection_vid(path_x):
-    video_capture = path_x
+    video_capture = 0
     #Create a Webcam Object
     cap=cv2.VideoCapture(video_capture)
     frame_width=int(cap.get(3))
@@ -42,4 +42,4 @@ def video_detection_vid(path_x):
                 
         yield img
         
-cv2.destroyAllWindows()
+        cv2.destroyAllWindows()

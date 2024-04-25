@@ -22,5 +22,6 @@
   "bugs": {
     "url": "https://github.com/maskboyAvi/Guardian-Vision/issues"
   },
-  "homepage": "https://github.com/maskboyAvi/Guardian-Vision#readme"
+  "homepage": "https://github.com/maskboyAvi/Guardian-Vision#readme",
+  "devDependencies": {}
 }
